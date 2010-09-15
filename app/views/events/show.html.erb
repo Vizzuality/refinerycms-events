@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @event.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+
+  <div>
+    <h3>Title</h3>
+    <%= @event.title %>
+  </div>
+
+  <div>
+    <h3>Description</h3>
+    <%= @event.description %>
+  </div>
+
+  <div>
+    <h3>Location</h3>
+    <%= @event.location %>
+  </div>
+
+  <div>
+    <h3>From</h3>
+    <%= @event.from %>
+  </div>
+
+  <div>
+    <h3>To</h3>
+    <%= @event.to %>
+  </div>
+
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2><%= t('.other') %></h2>
+  <ul id="events">
+    <% @events.each do |event| %>
+      <li>
+        <%= link_to event.title, event_url(event) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

@@ -6,7 +6,7 @@ An events plugin for [Refinery CMS](http://refinerycms.com/)
 
 Add the following line to your `Gemfile` file:
 
-    gem 'refinerycms-events', '= 0.1', :require => 'events', :git => git://github.com/Vizzuality/refinerycms-events.git
+    gem 'refinerycms-events', '= 0.1', :require => 'events', :git => 'git://github.com/Vizzuality/refinerycms-events.git'
 
 And then run `bundle install`.
 

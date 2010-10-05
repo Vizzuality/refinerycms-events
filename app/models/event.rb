@@ -14,4 +14,8 @@ class Event < ActiveRecord::Base
     Event.limit(options[:limit]).where("id != #{self.id}").where("events.from >= '#{self.from.at_beginning_of_day.to_s(:db)}' AND events.from <= '#{(self.from.end_of_day + options[:distance_in_days].days).to_s(:db)}'")
   end
 
+  def one_day_event?
+    from == to
+  end
+
 end

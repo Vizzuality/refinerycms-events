@@ -20,7 +20,7 @@ class EventsController < ApplicationController
 protected
 
   def find_all_events
-    @events = Event.paginate :page => params[:page], :per_page => RefinerySetting.find_or_set(:events_per_page, 10), :order => "position ASC")
+    @events = Event.paginate :page => params[:page], :per_page => RefinerySetting.find_or_set(:events_per_page, 10), :order => "position ASC"
   end
 
   def find_page

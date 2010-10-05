@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
       :limit => 10
     }
     options = default_options.merge(options)
-    Event.limit(options[:limit]).where("id != #{self.id}").where("events.from >= '#{(self.from + options[:distance_in_days].days).to_s(:db)}'")
+    Event.limit(options[:limit]).where("id != #{self.id}").where("events.from >= '#{(self.from.at_beginning_of_day + options[:distance_in_days].days).to_s(:db)}'")
   end
 
 end

@@ -8,6 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :from
       t.datetime :to
       t.integer :position
+      t.string :url
 
       t.timestamps
     end
